@@ -70,15 +70,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackgroundSession/REST/BackgroundSessionManager.m"
-            timestampString = "460440029.400477"
+            timestampString = "460445979.088302"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
             landmarkName = "-sendBatchDataRequestByPostBody:data:date:finishBlock:failBlock:"
             landmarkType = "5">
          </BreakpointContent>
@@ -86,15 +86,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BackgroundSession/REST/BackgroundSessionManager.m"
-            timestampString = "460440070.618853"
+            timestampString = "460445979.088302"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "-sendBatchDataRequestByPostBody:data:date:finishBlock:failBlock:"
             landmarkType = "5">
          </BreakpointContent>
@@ -165,7 +165,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/PonyHttpUrl/HttpBody/PHBHttpRequestSerializer.m"
@@ -201,12 +201,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/PonyHttpUrl/HttpBody/PHBMultipartFormData.m"
-            timestampString = "460445048.163339"
+            timestampString = "460446290.506787"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
             landmarkName = "+stringWithDictionary:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/PonyHttpUrl/HttpBody/PHBMultipartFormData.m"
+            timestampString = "460446290.506787"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "-appendPartWithHeaders:body:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

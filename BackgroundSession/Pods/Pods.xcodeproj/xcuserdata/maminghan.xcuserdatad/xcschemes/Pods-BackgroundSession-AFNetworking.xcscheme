@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "52EA1925FB6F0AA3DD2018FD"
+               BlueprintIdentifier = "02FAE7F0377BBC1A91B94F01"
                BuildableName = "libPods-BackgroundSession-AFNetworking.a"
                BlueprintName = "Pods-BackgroundSession-AFNetworking"
                ReferencedContainer = "container:Pods.xcodeproj">

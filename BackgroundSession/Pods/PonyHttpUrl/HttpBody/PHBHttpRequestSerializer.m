@@ -101,8 +101,8 @@
                 data = [[valueObj description] dataUsingEncoding:self.stringEncoding];
             }
             
-            if (valueObj) {
-                [formData appendPartWithFormData:valueObj name:name];
+            if (data) {
+                [formData appendPartWithFormData:data name:name];
             }
         }
     }

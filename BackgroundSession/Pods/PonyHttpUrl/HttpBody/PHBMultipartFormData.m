@@ -121,6 +121,7 @@ NSString * const PHBURLRequestSerializationErrorDomain = @"cn.maminghan.error.se
     
     [httpBody appendData:[boundary dataUsingEncoding:NSUTF8StringEncoding]];
     [httpBody appendData:[header dataUsingEncoding:NSUTF8StringEncoding]];
+    [httpBody appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
     [httpBody appendData:body];
     [httpBody appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
 }

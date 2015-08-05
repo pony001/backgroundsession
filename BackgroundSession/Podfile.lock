@@ -28,7 +28,7 @@ PODS:
     - CocoaLumberjack/Core
   - CocoaLumberjack/Extensions (2.0.1):
     - CocoaLumberjack/Default
-  - PonyHttpUrl (0.0.4)
+  - PonyHttpUrl (0.0.5)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5.4)
@@ -38,6 +38,6 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   CocoaLumberjack: 019d1361244274a6138c788c6cb80baabc13fb8f
-  PonyHttpUrl: f2cc4cb53fea5f1684a10377db00eb3d8963da08
+  PonyHttpUrl: 65fe58d54e263eecb82b4024cc8f3787315a2d80
 
 COCOAPODS: 0.37.1
