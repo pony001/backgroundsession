@@ -4,8 +4,9 @@ platform :ios, '7.0'
 target 'BackgroundSession' do
 
 pod 'AFNetworking', '~> 2.5.4'
-pod 'OMGHTTPURLRQ', '~> 2.1'
 pod 'CocoaLumberjack', '~> 2.0.0'
+pod 'PonyHttpUrl', '~> 0.0.3'
+
 end
 
 target 'BackgroundSessionTests' do

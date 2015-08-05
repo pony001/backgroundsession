@@ -14,7 +14,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-BackgroundSession-OMGHTTPURLRQ.xcscheme</key>
+		<key>Pods-BackgroundSession-PonyHttpUrl.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,22 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>12456F0D6F3300BA86799DC1</key>
+		<key>0D95927D975AA99533F44646</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1B76E07ACABA3FC638B402E3</key>
+		<key>3F2F7253AE940DBA517E3EA9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2890C3AAC5E93A04BEF28703</key>
+		<key>52EA1925FB6F0AA3DD2018FD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>63536942D108A0860B8E0B22</key>
+		<key>E8095EDE17E37A4B11E21096</key>
 		<dict>
 			<key>primary</key>
 			<true/>

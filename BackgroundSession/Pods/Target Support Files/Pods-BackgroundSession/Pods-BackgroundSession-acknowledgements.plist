@@ -66,9 +66,9 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 		</dict>
 		<dict>
 			<key>FooterText</key>
-			<string>See README.markdown for full license text.</string>
+			<string>See README for full license text.</string>
 			<key>Title</key>
-			<string>OMGHTTPURLRQ</string>
+			<string>PonyHttpUrl</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 		</dict>

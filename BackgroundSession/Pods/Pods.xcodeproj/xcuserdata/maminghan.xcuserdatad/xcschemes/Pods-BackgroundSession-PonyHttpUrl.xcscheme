@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2890C3AAC5E93A04BEF28703"
-               BuildableName = "libPods-BackgroundSession-OMGHTTPURLRQ.a"
-               BlueprintName = "Pods-BackgroundSession-OMGHTTPURLRQ"
+               BlueprintIdentifier = "3F2F7253AE940DBA517E3EA9"
+               BuildableName = "libPods-BackgroundSession-PonyHttpUrl.a"
+               BlueprintName = "Pods-BackgroundSession-PonyHttpUrl"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

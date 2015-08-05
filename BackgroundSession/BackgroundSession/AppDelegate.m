@@ -37,6 +37,7 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    //[[BackgroundSessionManager sharedManager] setEnteredBackground];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
@@ -49,7 +50,8 @@
 
 - (void)application:(UIApplication *)application handleEventsForBackgroundURLSession:(NSString *)identifier
   completionHandler:(void (^)())completionHandler {
-    
+    static int count = 0;
+    DDLogInfo(@"handleEventsForBackgroundSession count:%d", count);
     [BackgroundSessionManager sharedManager].backgroundSessionCompletionHandler = completionHandler;
 }
 

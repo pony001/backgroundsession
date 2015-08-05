@@ -19,8 +19,9 @@
 - (void)cancleAllDownload;
 - (void)cancleAllUploading;
 - (NSInteger)uploadTaskSize;
+- (void)startTask;
 
-- (void) sendBatchDataRequestByPostBody:(NSMutableDictionary*)postBody
+- (void) sendBatchDataRequestByPostBody:(NSDictionary*)postBody
                                    data:(NSData*)data
                                    date:(double)date
                             finishBlock:(void (^)(NSString* request))completionHandler

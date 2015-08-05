@@ -28,22 +28,16 @@ PODS:
     - CocoaLumberjack/Core
   - CocoaLumberjack/Extensions (2.0.1):
     - CocoaLumberjack/Default
-  - OMGHTTPURLRQ (2.1.3):
-    - OMGHTTPURLRQ/RQ (= 2.1.3)
-  - OMGHTTPURLRQ/FormURLEncode (2.1.3)
-  - OMGHTTPURLRQ/RQ (2.1.3):
-    - OMGHTTPURLRQ/FormURLEncode
-    - OMGHTTPURLRQ/UserAgent
-  - OMGHTTPURLRQ/UserAgent (2.1.3)
+  - PonyHttpUrl (0.0.4)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5.4)
   - CocoaLumberjack (~> 2.0.0)
-  - OMGHTTPURLRQ (~> 2.1)
+  - PonyHttpUrl (~> 0.0.3)
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   CocoaLumberjack: 019d1361244274a6138c788c6cb80baabc13fb8f
-  OMGHTTPURLRQ: c4268dea4295b585d711055dbcd87bfa82badd5f
+  PonyHttpUrl: f2cc4cb53fea5f1684a10377db00eb3d8963da08
 
 COCOAPODS: 0.37.1

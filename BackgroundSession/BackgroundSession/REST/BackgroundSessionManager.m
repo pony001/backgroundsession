@@ -8,10 +8,11 @@
 
 #import "BackgroundSessionManager.h"
 #import "AFNetworking.h"
-#import "OMGHTTPURLRQ.h"
 #import "LDRLogger.h"
+#import "PHBHttpRequestSerializer.h"
+#import "PHBMultipartFormData.h"
 
-static NSString * const kBackgroundSessionIdentifier = @"cn.ledongli.backgroundsession";
+static NSString * const kBackgroundSessionIdentifier = @"cn.maminghan.backgroundsession";
 
 @implementation BackgroundSessionManager {
     AFURLSessionManager *bgSessionManager;
@@ -35,8 +36,9 @@ static NSString * const kBackgroundSessionIdentifier = @"cn.ledongli.backgrounds
     } else {
         sessionConfiguration = [NSURLSessionConfiguration backgroundSessionConfiguration:kBackgroundSessionIdentifier];
     }
+    
     sessionConfiguration.sessionSendsLaunchEvents = YES;
-    sessionConfiguration.allowsCellularAccess = YES;
+    sessionConfiguration.allowsCellularAccess = NO;
     
     bgSessionManager = [[AFURLSessionManager alloc] initWithSessionConfiguration:sessionConfiguration];
     bgSessionManager.responseSerializer = [AFHTTPResponseSerializer serializer];
@@ -89,9 +91,16 @@ static NSString * const kBackgroundSessionIdentifier = @"cn.ledongli.backgrounds
     return uploadTasks.count;
 }
 
+- (void)startTask {
+    NSArray *uploadTasks = [bgSessionManager uploadTasks];
+    for (NSURLSessionUploadTask *uploadTask in uploadTasks) {
+        [uploadTask resume];
+    }
+}
+
 #pragma mark - BatchDate
 
-- (void) sendBatchDataRequestByPostBody:(NSMutableDictionary*)postBody
+- (void) sendBatchDataRequestByPostBody:(NSDictionary*)postBody
                                    data:(NSData*)data
                                    date:(double)date
                             finishBlock:(void (^)(NSString* request))completionHandler
@@ -100,17 +109,24 @@ static NSString * const kBackgroundSessionIdentifier = @"cn.ledongli.backgrounds
     NSString *url = @"http://test.maminghan.cn/upload.php";
     
     NSProgress *progress = nil;
-    OMGMultipartFormData *multipartFormData = [OMGMultipartFormData new];
-    [multipartFormData addFile:data parameterName:@"data" filename:@"file" contentType:@"application/octet-stream"];
-    [multipartFormData addParameters:postBody];
+
+    PHBHttpRequestSerializer *requestSerializer = [PHBHttpRequestSerializer serializerWithBoundary:@"------------------------7BFA9292F0DA32DC"];
     
-    NSURLRequest *request = [OMGHTTPURLRQ POST:url:multipartFormData];
+    NSData *bodyData = [requestSerializer multipartDataWithParameters:postBody
+                                            constructingBodyWithBlock:^(PHBMultipartFormData *formData) {
+                                                [formData appendPartWithFileData:data
+                                                                            name:@"file"
+                                                                        fileName:@"file"
+                                                                        mimeType:@"application/octet-stream"];
+                                            }];
     
     id path = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:[NSString stringWithFormat:@"upload.date.%.0f", date]];
-    [request.HTTPBody writeToFile:path atomically:YES];
+    [bodyData writeToFile:path atomically:YES];
+    
+    NSURLRequest *request = [requestSerializer requestWithMethod:@"POST" URLString:url];
     
     [[bgSessionManager uploadTaskWithRequest:request
-                                     fromFile:[NSURL fileURLWithPath:path]
+                                    fromFile:[NSURL fileURLWithPath:path]
                                      progress:&progress
                             completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
                                 DDLogInfo(@"session completion : %@", error);
@@ -124,41 +140,7 @@ static NSString * const kBackgroundSessionIdentifier = @"cn.ledongli.backgrounds
                                     
                                 }
                             }] resume];
+    
 }
-
-#pragma mark - download
-
-//- (void) sendDownloadRequestByBody:(NSMutableDictionary*)body
-//                       finishBlock:(void (^)(NSData* data, RESTResponse* request))finishHandler
-//                         failBlock:(void (^)(NSInteger errorCode))failHandler {
-//    if (![VerifyNetEnable verifyPostEnableWithParam:body withData:Nil]) {
-//        return;
-//    }
-//    
-//    NSString *url = ( NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, ( CFStringRef)SERVERDAILYSTORAGE_DOWN, nil, CFSTR(""), kCFStringEncodingUTF8));
-//
-//    NSURLRequest *request = [OMGHTTPURLRQ GET:url:body];
-//    
-//    [TrafficManager statisticsNetworkTrafficWithURLRequest:request];
-//    
-//    NSURLSessionDownloadTask *downloadTask = [bgSessionManager downloadTaskWithRequest:request
-//                                                                               progress:nil
-//                                                                            destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
-//                                                                                DDLogInfo(@"destination");
-//                                                                                NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
-//                                                                                return [documentsDirectoryURL URLByAppendingPathComponent:[NSString stringWithFormat:@"%@",[NSDate date]]];
-//                                                                            } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
-//                                                                                [TrafficManager statisticsNetworkTrafficWithURLResponse:response];
-//                                                                                
-//                                                                                DDLogInfo(@"File downloaded");
-//                                                                                if (error) {
-//                                                                                    failHandler(0);
-//                                                                                } else {
-//                                                                                    finishHandler([NSData dataWithContentsOfURL:filePath], nil);
-//                                                                                    [[NSFileManager defaultManager] removeItemAtURL:filePath error:nil];
-//                                                                                }
-//                                                                            }];
-//    [downloadTask resume];
-//}
 
 @end

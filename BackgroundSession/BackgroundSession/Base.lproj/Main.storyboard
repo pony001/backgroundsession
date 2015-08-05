@@ -25,10 +25,21 @@
                                     <action selector="tapUpload:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="vrj-sv-gHV"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sm4-eS-zBe">
+                                <rect key="frame" x="238" y="330" width="46" height="30"/>
+                                <state key="normal" title="Start Task">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapStartTask:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="soP-JN-d6o"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="O1Q-h8-fGa" secondAttribute="centerY" id="Cca-qd-JfX"/>
+                            <constraint firstAttribute="centerX" secondItem="Sm4-eS-zBe" secondAttribute="centerX" id="LBA-X0-t1e"/>
+                            <constraint firstItem="Sm4-eS-zBe" firstAttribute="top" secondItem="O1Q-h8-fGa" secondAttribute="bottom" constant="38" id="WTr-vO-Zvg"/>
                             <constraint firstAttribute="centerX" secondItem="O1Q-h8-fGa" secondAttribute="centerX" id="yk8-rU-keS"/>
                         </constraints>
                     </view>
